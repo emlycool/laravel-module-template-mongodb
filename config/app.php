@@ -156,7 +156,8 @@ return [
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
-        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        // Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        Jenssegers\Mongodb\Auth\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
@@ -165,15 +166,21 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Jenssegers\Mongodb\MongodbQueueServiceProvider::class,
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Template\Providers\AppServiceProvider::class,
+        Template\Providers\AuthServiceProvider::class,
+        // Template\Providers\BroadcastServiceProvider::class,
+        Template\Providers\EventServiceProvider::class,
+        Template\Providers\RouteServiceProvider::class,
+
+        /*
+         * Module Service Providers
+         */
+        // Template\Modules\Admin\AdminServiceProvider::class,
+        Template\Modules\User\UserServiceProvider::class,
 
     ],
 
